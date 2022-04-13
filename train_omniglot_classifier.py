@@ -40,6 +40,7 @@ progress_frequency = args.progress_frequency
 batch_size = args.batch_size
 
 
+
 raw_data = np.load(dataset_path)
 raw_data = raw_data[data_start_index:]
 in_channels = raw_data.shape[-1]
