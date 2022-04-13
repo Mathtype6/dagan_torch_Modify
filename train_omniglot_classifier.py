@@ -44,7 +44,7 @@ batch_size = args.batch_size
 raw_data = np.load(dataset_path)
 raw_data = raw_data[data_start_index:]
 in_channels = raw_data.shape[-1]
-img_size = args.img_size or raw_data.shape[2]
+img_size = raw_data.shape[2]
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 dagan_generator = Generator(dim=img_size,channels=in_channels)
