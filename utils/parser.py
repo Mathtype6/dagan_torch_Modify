@@ -92,11 +92,11 @@ def get_omniglot_classifier_args():
         "with and without augmentations to compare the results.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument(
-        "generator_path",
-        type=str,
-        help="Filepath for dagan generator to use for augmentations.",
-    )
+    # parser.add_argument(
+    #     "generator_path",
+    #     type=str,
+    #     help="Filepath for dagan generator to use for augmentations.",
+    # )
     parser.add_argument(
         "--dataset_path",
         type=str,
