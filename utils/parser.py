@@ -95,6 +95,7 @@ def get_omniglot_classifier_args():
     # parser.add_argument(
     #     "generator_path",
     #     type=str,
+    #     default='checkpoints/final_omniglot_generator.pt',
     #     help="Filepath for dagan generator to use for augmentations.",
     # )
     parser.add_argument(

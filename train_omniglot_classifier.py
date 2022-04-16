@@ -29,7 +29,7 @@ def main():
     args = get_omniglot_classifier_args()
 
     #generator_path = args.generator_path
-    generator_path ='checkpoints/omniglot_checkpoint.pt'
+    generator_path ='checkpoints/final_omniglot_generator.pt'
     dataset_path = args.dataset_path
     data_start_index = args.data_start_index
     num_classes = args.num_training_classes
@@ -49,11 +49,11 @@ def main():
     img_size = raw_data.shape[2]
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    dagan_generator = Generator(dim=img_size,channels=in_channels)
-    checkpoint = torch.load(generator_path, map_location=device)
-    print(checkpoint['g'])
-    dagan_generator.load_state_dict(checkpoint['g'])
-    #dagan_generator = torch.load(generator_path, map_location=device)
+    # dagan_generator = Generator(dim=img_size,channels=in_channels)
+    # checkpoint = torch.load(generator_path, map_location=device)
+    # print(checkpoint['g'])
+    # dagan_generator.load_state_dict(checkpoint['g'])
+    dagan_generator = torch.load(generator_path, map_location=device)
     dagan_generator.eval()
 
     loss_function = nn.CrossEntropyLoss()
